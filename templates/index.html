@@ -4,7 +4,7 @@
         <meta charset="utf-8">
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-        <link href="{{ url_for('static', filename='css/all.css')}}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/all.min.css')}}" rel="stylesheet">
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/p5.min.js') }}"></script>
@@ -36,17 +36,17 @@
                     <h3 class="my-3">Outils</h3>
                     <div class="col-md-12">
                         <div class="col-md-3">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" onclick="tool = 'pencil';">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
                         </div>
                         <div class="col-md-3">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" onclick="tool = 'filler';">
                                 <i class="fas fa-fill-drip"></i>
                             </button>
                         </div>
                         <div class="col-md-3">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" onclick="tool = 'piplette';">
                                 <i class="fas fa-eye-dropper"></i>
                             </button>
                         </div>
@@ -54,25 +54,37 @@
                     <br>
                     <br>
                     <h3>Couleur</h3>
-                    <div class="col-md-1">
-                        <label for="Slider_R"><b>R</b></label>
+                    <div class="container-fluid">
+                        <label for="Slider_R" class="col-md-12">
+                            <b class="col-md-5 text-left">R :</b>
+                            <span class="col-md-5 text-right" id="red_val"></span>
+                        </label>
                     </div>
-                    <div class="col-md-11">
+                    <div class="col-md-12">
                         <input type="range" min="0" max="255" value="0" class="form-control" id="Slider_R">
                     </div>
-                    <div class="col-md-1">
-                        <label for="Slider_G"><b>G</b></label>
+                    <div class="container-fluid">
+                        <label for="Slider_G" class="col-md-12">
+                            <b class="col-md-5 text-left">G :</b>
+                            <span class="col-md-5 text-right" id="green_val"></span>
+                        </label>
                     </div>
                     <div class="col-md-11">
                         <input type="range" min="0" max="255" value="0" class="form-control" id="Slider_G">
                     </div>
-                    <div class="col-md-1">
-                        <label for="Slider_B"><b>B</b></label>
+                    <div class="container-fluid">
+                        <label for="Slider_B" class="col-md-12">
+                            <b class="col-md-5 text-left">B :</b>
+                            <span class="col-md-5 text-right" id="blue_val"></span>
+                        </label>
                     </div>
                     <div class="col-md-11">
                         <input type="range" min="0" max="255" value="0" class="form-control" id="Slider_B">
                     </div>
                     <div class="col-md-12" id="RGBRect">
+                    </div>
+                    <div class="container-fluid text-center">
+                        <button class="col-md-12 btn btn-danger">erase</button>
                     </div>
                 </div>
             </div>
